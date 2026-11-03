@@ -1,4 +1,9 @@
 /* ==========================================================
+   TYPOGRAPHY IMPORTS (Editorial Serif + Modern Sans Pairing)
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================================================
    THEME VARIABLES & BASE
    ========================================================== */
 :root {
@@ -14,10 +19,8 @@
   --bg-light: #f8fafc;
   --white: #ffffff;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md:
-    0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-  --shadow-lg:
-    0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
   --radius: 8px;
 }
 
@@ -32,17 +35,17 @@ html {
 }
 
 body {
-  font-family:
-    "Inter",
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text-main);
   background-color: var(--white);
   line-height: 1.6;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
+}
+
+button, input, select, textarea, .nav-links, .badge-pill, .hero-degrees {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.01em;
 }
 
 a {
@@ -121,10 +124,11 @@ nav {
 }
 
 .logo-title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: var(--brand-blue);
-  letter-spacing: -0.3px;
+  letter-spacing: -0.02em;
 }
 
 .logo-subtitle {
@@ -132,7 +136,7 @@ nav {
   color: var(--text-muted);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.05em;
 }
 
 .nav-links {
@@ -236,21 +240,23 @@ nav {
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.04em;
   margin-bottom: 16px;
 }
 
 .hero-title {
-  font-size: 2.4rem;
-  line-height: 1.2;
-  font-weight: 800;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 2.5rem;
+  line-height: 1.18;
+  font-weight: 500;
   color: var(--primary-dark);
-  margin-bottom: 10px;
-  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+  letter-spacing: -0.025em;
 }
 
 .hero-degrees {
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--brand-blue);
   margin-bottom: 16px;
@@ -376,16 +382,19 @@ nav {
 }
 
 .stat-item h3 {
-  font-size: 1.85rem;
-  font-weight: 800;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 2.1rem;
+  font-weight: 600;
   color: var(--brand-blue);
   margin-bottom: 2px;
+  letter-spacing: -0.02em;
 }
 
 .stat-item p {
   font-size: 0.84rem;
   color: var(--text-muted);
   font-weight: 500;
+  letter-spacing: 0.04em;
 }
 
 /* ==========================================================
@@ -403,19 +412,20 @@ section {
 
 .section-subtitle-tag {
   font-size: 0.8rem;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--brand-blue);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.06em;
   display: block;
   margin-bottom: 6px;
 }
 
 .section-main-title {
-  font-size: 1.85rem;
-  font-weight: 700;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 2.1rem;
+  font-weight: 500;
   color: var(--primary-dark);
-  letter-spacing: -0.3px;
+  letter-spacing: -0.02em;
   margin-bottom: 10px;
 }
 
@@ -478,8 +488,9 @@ section {
 }
 
 .about-box-card h4 {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--brand-blue);
   margin-bottom: 14px;
 }
@@ -665,8 +676,9 @@ section {
 }
 
 .edu-card-group h4 {
-  font-size: 1.15rem;
-  font-weight: 700;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
   color: var(--primary-dark);
   margin-bottom: 16px;
   display: flex;
@@ -676,6 +688,7 @@ section {
 
 .edu-card-group h4 i {
   color: var(--brand-blue);
+  font-size: 1.1rem;
 }
 
 .data-table-wrap {
@@ -900,8 +913,9 @@ table.site-table tr:nth-child(even) td {
 }
 
 .contact-form-card h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
   color: var(--primary-dark);
   margin-bottom: 6px;
 }
@@ -973,9 +987,10 @@ footer {
 }
 
 .footer-col h5 {
+  font-family: 'Newsreader', Georgia, 'Times New Roman', serif;
   color: var(--white);
-  font-size: 0.95rem;
-  font-weight: 700;
+  font-size: 1.05rem;
+  font-weight: 600;
   margin-bottom: 14px;
 }
 
@@ -1063,7 +1078,7 @@ footer {
     justify-content: center;
   }
   .hero-title {
-    font-size: 1.85rem;
+    font-size: 1.95rem;
   }
   .hero-desc {
     text-align: left;
