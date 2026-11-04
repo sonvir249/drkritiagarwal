@@ -1,21 +1,28 @@
 /* ==========================================================
-   THEME VARIABLES & BASE
+   THEME VARIABLES & HIGH-CONTRAST BLUE PALETTE
    ========================================================== */
 :root {
-  --primary-dark: #1A202C;
-  --brand-blue: #1E40AF;
-  --brand-blue-hover: #1D4ED8;
-  --brand-blue-light: #EBF3FE;
-  --brand-blue-subtle: #F4F8FD;
-  --text-main: #2D3748;
-  --text-muted: #5A6A80;
-  --text-light: #718096;
-  --border-color: #E2E8F0;
-  --bg-light: #FAFBFD;
+  /* Deep Blue Hierarchy for Maximum Readability */
+  --blue-title: #0A192F;         /* Deep Navy - Headlines & Hero */
+  --blue-heading: #0F2744;       /* Dark Royal Navy - Section Titles */
+  --blue-body: #1E3A5F;          /* Midnight Slate Blue - Body Text */
+  --blue-secondary: #334E68;     /* Medium Deep Blue - Sub-labels, Details */
+  --blue-muted: #486581;         /* Readable Slate - Captions, Small Footers */
+  
+  /* Brand Accent Blues */
+  --brand-blue: #1D4ED8;         /* Vibrant Medical Blue */
+  --brand-blue-hover: #1E40AF;   /* Darker Interactive Blue */
+  --brand-blue-light: #DBEAFE;   /* Border & Accent Highlight */
+  --brand-blue-subtle: #EFF6FF;  /* Soft Ice Blue Card Background */
+  
+  /* Neutral Structural Colors */
+  --border-color: #CBD5E1;       /* Visible crisp border */
+  --bg-light: #F8FAFC;
   --white: #FFFFFF;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px -2px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 12px 24px -4px rgba(0, 0, 0, 0.07);
+  
+  --shadow-sm: 0 1px 3px 0 rgba(15, 39, 68, 0.06);
+  --shadow-md: 0 4px 12px -2px rgba(15, 39, 68, 0.08);
+  --shadow-lg: 0 12px 24px -4px rgba(15, 39, 68, 0.1);
 }
 
 * {
@@ -30,11 +37,11 @@ html {
 
 body {
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: var(--text-main);
+  color: var(--blue-body);
   background-color: #FAFBFD;
-  line-height: 1.65;
+  line-height: 1.68;
   font-size: 0.94rem;
-  font-weight: 400;
+  font-weight: 400; /* Reduced from 450 */
   -webkit-font-smoothing: antialiased;
 }
 
@@ -48,21 +55,21 @@ a {
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 /* ==========================================================
    TOP BAR
    ========================================================== */
 .top-bar {
-  background-color: #111827;
-  color: #9CA3AF;
+  background-color: var(--blue-title);
+  color: #CBD5E1;
   font-size: 0.8rem;
-  padding: 7px 0;
-  font-weight: 400;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 8px 0;
+  font-weight: 450; /* Reduced from 500 */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .top-bar .container {
@@ -79,13 +86,13 @@ a {
 
 .top-bar-left i,
 .top-bar-right i {
-  color: #93C5FD;
+  color: #60A5FA;
   margin-right: 5px;
 }
 
 .top-bar-right a {
-  color: #E5E7EB;
-  font-weight: 400;
+  color: #FFFFFF;
+  font-weight: 500; /* Reduced from 600 */
   transition: color 0.2s ease;
 }
 
@@ -100,7 +107,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
@@ -111,42 +118,51 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 72px;
+  gap: 16px;
 }
 
 .logo-area {
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
 }
 
 .logo-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.55rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-size: clamp(1.3rem, 1.8vw, 1.6rem);
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
   letter-spacing: -0.01em;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .logo-subtitle {
   font-size: 0.68rem;
-  color: var(--text-light);
-  font-weight: 500;
+  color: var(--blue-secondary);
+  font-weight: 500; /* Reduced from 600 */
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   margin-top: 2px;
+  white-space: nowrap;
 }
 
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 26px;
+  gap: clamp(10px, 1.3vw, 20px);
   align-items: center;
+  flex-shrink: 1;
+}
+
+.nav-links li {
+  white-space: nowrap;
 }
 
 .nav-links li a {
-  font-size: 0.86rem;
-  font-weight: 400;
-  color: var(--text-muted);
+  font-size: clamp(0.8rem, 0.95vw, 0.88rem);
+  font-weight: 500; /* Reduced from 600 */
+  color: var(--blue-secondary);
   padding: 6px 0;
   position: relative;
   transition: color 0.2s ease;
@@ -154,7 +170,7 @@ nav {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: var(--primary-dark);
+  color: var(--brand-blue);
 }
 
 .nav-links li a::after {
@@ -163,7 +179,7 @@ nav {
   bottom: 0;
   left: 0;
   width: 0%;
-  height: 1.5px;
+  height: 2px;
   background-color: var(--brand-blue);
   transition: width 0.2s ease;
 }
@@ -174,13 +190,13 @@ nav {
 }
 
 .btn-nav {
-  background-color: #1E293B;
-  color: var(--white) !important;
-  padding: 8px 18px !important;
+  background-color: var(--blue-heading);
+  color: #FFFFFF !important;
+  padding: 8px clamp(12px, 1.3vw, 18px) !important;
   border-radius: 20px;
-  font-size: 0.82rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.01em;
+  font-size: clamp(0.76rem, 0.88vw, 0.84rem) !important;
+  font-weight: 500 !important; /* Reduced from 600 */
+  letter-spacing: 0.02em;
   transition: all 0.2s ease !important;
 }
 
@@ -197,16 +213,16 @@ nav {
   display: none;
   background: none;
   border: none;
-  font-size: 1.25rem;
-  color: var(--text-main);
+  font-size: 1.3rem;
+  color: var(--blue-title);
   cursor: pointer;
 }
 
 /* ==========================================================
-   HERO SECTION (Exact Typography & Pill Styles)
+   HERO SECTION
    ========================================================== */
 .hero {
-  background: linear-gradient(180deg, #F8FAFD 0%, #FFFFFF 100%);
+  background: linear-gradient(180deg, #F0F6FD 0%, #FFFFFF 100%);
   padding: 80px 0 70px 0;
   border-bottom: 1px solid var(--border-color);
 }
@@ -228,53 +244,51 @@ nav {
   text-align: center;
 }
 
-/* Subtle Pill Badge from Reference */
 .badge-pill {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: #F1F5F9;
-  border: 1px solid #E2E8F0;
-  color: #475569;
-  padding: 4px 14px;
+  background-color: var(--brand-blue-subtle);
+  border: 1px solid #BFDBFE;
+  color: var(--brand-blue);
+  padding: 5px 14px;
   border-radius: 20px;
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: 500; /* Reduced from 600 */
   letter-spacing: 0.02em;
   margin-bottom: 16px;
 }
 
-/* Hero Title - Exact Serif Match */
 .hero-title {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-  font-size: 3.4rem;
+  font-size: 3.5rem;
   line-height: 1.08;
-  font-weight: 400;
-  color: #1A202C;
+  font-weight: 500; /* Reduced from 700 to match editorial style */
+  color: var(--blue-title);
   margin-bottom: 8px;
   letter-spacing: -0.015em;
 }
 
 .hero-degrees {
-  font-size: 0.94rem;
-  font-weight: 500;
-  color: #4A5568;
+  font-size: 0.96rem;
+  font-weight: 500; /* Reduced from 600 */
+  color: var(--blue-heading);
   margin-bottom: 6px;
   letter-spacing: 0.01em;
 }
 
 .hero-subrole {
   font-size: 0.88rem;
-  color: var(--text-light);
-  font-weight: 400;
+  color: var(--blue-secondary);
+  font-weight: 400; /* Reduced from 500 */
   margin-bottom: 22px;
 }
 
 .hero-desc {
-  font-size: 0.92rem;
-  color: #4A5568;
-  line-height: 1.7;
-  font-weight: 300;
+  font-size: 0.94rem;
+  color: var(--blue-body);
+  line-height: 1.72;
+  font-weight: 400; /* Reduced from 450 */
   margin-bottom: 30px;
   max-width: 580px;
 }
@@ -285,14 +299,13 @@ nav {
   flex-wrap: wrap;
 }
 
-/* Capsule Buttons Matching the Reference */
 .btn-primary {
-  background-color: #1E3A5F;
-  color: var(--white);
+  background-color: var(--blue-heading);
+  color: #FFFFFF;
   padding: 10px 22px;
   border-radius: 24px;
-  font-weight: 500;
-  font-size: 0.86rem;
+  font-weight: 500; /* Reduced from 600 */
+  font-size: 0.88rem;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -303,18 +316,18 @@ nav {
 }
 
 .btn-primary:hover {
-  background-color: var(--brand-blue-hover);
+  background-color: var(--brand-blue);
   transform: translateY(-1px);
 }
 
 .btn-outline {
-  background-color: var(--white);
-  color: #2D3748;
-  border: 1px solid #CBD5E1;
+  background-color: #FFFFFF;
+  color: var(--blue-heading);
+  border: 1.5px solid #94A3B8;
   padding: 10px 20px;
   border-radius: 24px;
-  font-weight: 500;
-  font-size: 0.86rem;
+  font-weight: 500; /* Reduced from 600 */
+  font-size: 0.88rem;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -322,12 +335,13 @@ nav {
 }
 
 .btn-outline:hover {
-  background-color: #F8FAFC;
-  border-color: #94A3B8;
+  background-color: var(--brand-blue-subtle);
+  border-color: var(--brand-blue);
+  color: var(--brand-blue);
 }
 
 .hero-image-card {
-  background: var(--white);
+  background: #FFFFFF;
   border-radius: 16px;
   padding: 12px;
   box-shadow: var(--shadow-lg);
@@ -341,34 +355,34 @@ nav {
   width: 100%;
   height: 380px;
   border-radius: 12px;
-  background: linear-gradient(180deg, #EDF2F7 0%, #E2E8F0 100%);
+  background: linear-gradient(180deg, #E2E8F0 0%, #CBD5E1 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #718096;
-  font-weight: 400;
+  color: var(--blue-secondary);
+  font-weight: 450;
   gap: 10px;
 }
 
 .doctor-photo-placeholder i {
   font-size: 3.5rem;
-  color: #A0AEC0;
+  color: #64748B;
 }
 
 .hero-verified-card {
   margin-top: 10px;
   background-color: #F8FAFC;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 8px 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-main);
+  font-size: 0.82rem;
+  font-weight: 500; /* Reduced from 600 */
+  color: var(--blue-heading);
 }
 
 .hero-verified-card i {
@@ -379,7 +393,7 @@ nav {
    STATS BAR
    ========================================================== */
 .stats-bar {
-  background-color: var(--white);
+  background-color: #FFFFFF;
   border-bottom: 1px solid var(--border-color);
   padding: 34px 0;
 }
@@ -393,17 +407,17 @@ nav {
 
 .stat-item h3 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 2.5rem;
-  font-weight: 500;
+  font-size: 2.7rem;
+  font-weight: 500; /* Reduced from 700 to match elegant numerals */
   color: var(--brand-blue);
   line-height: 1;
   margin-bottom: 4px;
 }
 
 .stat-item p {
-  font-size: 0.8rem;
-  color: var(--text-light);
-  font-weight: 500;
+  font-size: 0.84rem;
+  color: var(--blue-secondary);
+  font-weight: 500; /* Reduced from 600 */
   letter-spacing: 0.02em;
 }
 
@@ -416,13 +430,13 @@ section {
 
 .section-header {
   text-align: center;
-  max-width: 650px;
+  max-width: 680px;
   margin: 0 auto 50px auto;
 }
 
 .section-subtitle-tag {
-  font-size: 0.76rem;
-  font-weight: 600;
+  font-size: 0.78rem;
+  font-weight: 600; /* Reduced from 700 */
   color: var(--brand-blue);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -433,8 +447,8 @@ section {
 .section-main-title {
   font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
   font-size: 2.4rem;
-  font-weight: 500;
-  color: var(--primary-dark);
+  font-weight: 500; /* Reduced from 700 */
+  color: var(--blue-title);
   letter-spacing: -0.015em;
   margin-bottom: 12px;
 }
@@ -442,16 +456,16 @@ section {
 .section-main-title::after {
   content: "";
   display: block;
-  width: 36px;
+  width: 40px;
   height: 2px;
   background-color: var(--brand-blue);
   margin: 10px auto 0 auto;
 }
 
 .section-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-weight: 300;
+  font-size: 0.94rem;
+  color: var(--blue-secondary);
+  font-weight: 400; /* Reduced from 450 */
 }
 
 /* ==========================================================
@@ -465,10 +479,10 @@ section {
 }
 
 .about-text p {
-  font-size: 0.92rem;
-  color: #4A5568;
-  line-height: 1.7;
-  font-weight: 300;
+  font-size: 0.94rem;
+  color: var(--blue-body);
+  line-height: 1.75;
+  font-weight: 400; /* Reduced from 450 */
   margin-bottom: 16px;
   text-align: justify;
 }
@@ -481,19 +495,19 @@ section {
 }
 
 .highlight-pill {
-  background-color: var(--white);
-  border: 1px solid #E2E8F0;
-  border-left: 3px solid var(--brand-blue);
-  padding: 9px 12px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--text-main);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-left: 3.5px solid var(--brand-blue);
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  font-weight: 500; /* Reduced from 600 */
+  color: var(--blue-heading);
   border-radius: 4px;
 }
 
 .about-box-card {
   background: #FFFFFF;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 32px;
   box-shadow: var(--shadow-sm);
@@ -501,9 +515,9 @@ section {
 
 .about-box-card h4 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.45rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-size: 1.5rem;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
   margin-bottom: 16px;
 }
 
@@ -512,24 +526,98 @@ section {
 }
 
 .clinical-pillars li {
-  font-size: 0.88rem;
-  color: #4A5568;
-  font-weight: 300;
+  font-size: 0.9rem;
+  color: var(--blue-body);
+  font-weight: 400; /* Reduced from 450 */
   margin-bottom: 14px;
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  line-height: 1.6;
+  line-height: 1.62;
 }
 
 .clinical-pillars li strong {
-  font-weight: 600;
-  color: #1A202C;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
 }
 
 .clinical-pillars li i {
   color: var(--brand-blue);
   margin-top: 4px;
+}
+
+/* ==========================================================
+   SYMPTOMS & WHEN TO CONSULT
+   ========================================================== */
+.symptoms-section {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.symptoms-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 36px;
+}
+
+.symptom-card {
+  background-color: #FAFBFD;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.symptom-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-blue);
+  box-shadow: var(--shadow-sm);
+  background-color: #FFFFFF;
+}
+
+.symptom-card i {
+  color: #D97706;
+  font-size: 1rem;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.symptom-card p {
+  font-size: 0.88rem;
+  color: var(--blue-heading);
+  font-weight: 450; /* Slightly softened from 500 */
+  line-height: 1.5;
+  margin: 0;
+}
+
+.symptom-card.symptom-card-alert {
+  border-left: 3.5px solid #DC2626;
+  background-color: #FFFDFD;
+}
+
+.symptom-card.symptom-card-alert i {
+  color: #DC2626;
+}
+
+.symptoms-action-prompt {
+  text-align: center;
+  background-color: var(--brand-blue-subtle);
+  border: 1px solid #BFDBFE;
+  border-radius: 12px;
+  padding: 24px 20px;
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.symptoms-action-prompt p {
+  font-size: 0.94rem;
+  color: var(--blue-title);
+  font-weight: 500; /* Reduced from 600 */
+  margin-bottom: 14px;
 }
 
 /* ==========================================================
@@ -546,10 +634,10 @@ section {
 }
 
 .service-card {
-  background-color: var(--white);
+  background-color: #FFFFFF;
   border-radius: 10px;
   padding: 26px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   transition: all 0.25s ease;
   display: flex;
@@ -559,7 +647,7 @@ section {
 .service-card:hover {
   transform: translateY(-3px);
   box-shadow: var(--shadow-md);
-  border-color: #CBD5E1;
+  border-color: var(--brand-blue);
 }
 
 .service-icon-box {
@@ -571,23 +659,23 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   margin-bottom: 16px;
 }
 
 .service-card h4 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.3rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-size: 1.35rem;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
   margin-bottom: 8px;
 }
 
 .service-card p {
-  font-size: 0.84rem;
-  color: #5A6A80;
-  font-weight: 300;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  color: var(--blue-body);
+  font-weight: 400; /* Reduced from 450 */
+  line-height: 1.62;
 }
 
 /* ==========================================================
@@ -610,8 +698,8 @@ section {
   left: 7px;
   top: 5px;
   bottom: 5px;
-  width: 1.5px;
-  background: #E2E8F0;
+  width: 2px;
+  background: #CBD5E1;
 }
 
 .timeline-item {
@@ -631,13 +719,13 @@ section {
   height: 15px;
   border-radius: 50%;
   background: var(--brand-blue);
-  border: 3px solid var(--white);
-  box-shadow: 0 0 0 1.5px #CBD5E1;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 1.5px #94A3B8;
 }
 
 .timeline-card {
-  background: var(--white);
-  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
   border-radius: 10px;
   padding: 20px 24px;
   box-shadow: var(--shadow-sm);
@@ -654,34 +742,35 @@ section {
 
 .timeline-role {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-size: 1.3rem;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
 }
 
 .timeline-date {
   font-size: 0.78rem;
-  font-weight: 500;
+  font-weight: 500; /* Reduced from 600 */
   color: var(--brand-blue);
   background-color: var(--brand-blue-subtle);
+  border: 1px solid #BFDBFE;
   padding: 3px 10px;
   border-radius: 12px;
 }
 
 .timeline-institution {
-  font-size: 0.84rem;
-  font-weight: 500;
-  color: #4A5568;
+  font-size: 0.86rem;
+  font-weight: 500; /* Reduced from 600 */
+  color: var(--blue-heading);
   margin-bottom: 10px;
 }
 
 .timeline-details {
   list-style: disc;
   margin-left: 18px;
-  font-size: 0.84rem;
-  color: #5A6A80;
-  font-weight: 300;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  color: var(--blue-body);
+  font-weight: 400; /* Reduced from 450 */
+  line-height: 1.62;
 }
 
 .timeline-details li {
@@ -700,8 +789,8 @@ section {
 .edu-card-group h4 {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.45rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
   margin-bottom: 16px;
   display: flex;
   align-items: center;
@@ -714,38 +803,38 @@ section {
 }
 
 .data-table-wrap {
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   overflow: hidden;
-  background: var(--white);
+  background: #FFFFFF;
   box-shadow: var(--shadow-sm);
 }
 
 table.site-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.84rem;
+  font-size: 0.86rem;
 }
 
 table.site-table th {
-  background-color: #F8FAFC;
-  color: var(--primary-dark);
-  font-weight: 600;
+  background-color: #F1F5F9;
+  color: var(--blue-title);
+  font-weight: 600; /* Reduced from 700 */
   text-align: left;
   padding: 10px 14px;
-  border-bottom: 1px solid #E2E8F0;
+  border-bottom: 1px solid var(--border-color);
 }
 
 table.site-table td {
   padding: 10px 14px;
-  border-bottom: 1px solid #F1F5F9;
-  color: #4A5568;
-  font-weight: 300;
+  border-bottom: 1px solid #E2E8F0;
+  color: var(--blue-body);
+  font-weight: 400; /* Reduced from 450 */
 }
 
 table.site-table td strong {
-  font-weight: 600;
-  color: #1A202C;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
 }
 
 table.site-table tr:last-child td {
@@ -770,8 +859,8 @@ table.site-table tr:nth-child(even) td {
 }
 
 .award-card {
-  background: var(--white);
-  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
   border-radius: 8px;
   padding: 18px;
   display: flex;
@@ -788,16 +877,16 @@ table.site-table tr:nth-child(even) td {
 
 .award-text h5 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-size: 1.18rem;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
   margin-bottom: 2px;
 }
 
 .award-text p {
-  font-size: 0.78rem;
-  color: var(--text-light);
-  font-weight: 300;
+  font-size: 0.82rem;
+  color: var(--blue-secondary);
+  font-weight: 450;
 }
 
 /* ==========================================================
@@ -809,11 +898,11 @@ table.site-table tr:nth-child(even) td {
 }
 
 .pub-card {
-  background: var(--white);
-  border-left: 3px solid var(--brand-blue);
-  border-top: 1px solid #E2E8F0;
-  border-right: 1px solid #E2E8F0;
-  border-bottom: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  border-left: 3.5px solid var(--brand-blue);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
   border-radius: 0 6px 6px 0;
   padding: 16px 20px;
   margin-bottom: 14px;
@@ -821,23 +910,23 @@ table.site-table tr:nth-child(even) td {
 }
 
 .pub-card p {
-  font-size: 0.86rem;
-  color: #334155;
-  font-weight: 300;
-  line-height: 1.6;
+  font-size: 0.88rem;
+  color: var(--blue-body);
+  font-weight: 400; /* Reduced from 450 */
+  line-height: 1.62;
 }
 
 .pub-card p strong {
-  font-weight: 600;
-  color: #0F172A;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
 }
 
 .pub-card .doi {
   display: inline-block;
   margin-top: 4px;
-  font-size: 0.76rem;
+  font-size: 0.8rem;
   color: var(--brand-blue);
-  font-weight: 500;
+  font-weight: 500; /* Reduced from 600 */
 }
 
 /* ==========================================================
@@ -845,7 +934,7 @@ table.site-table tr:nth-child(even) td {
    ========================================================== */
 .contact-section {
   background: #FFFFFF;
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid var(--border-color);
 }
 
 .contact-grid {
@@ -859,7 +948,7 @@ table.site-table tr:nth-child(even) td {
   background: #FAFBFD;
   border-radius: 12px;
   padding: 32px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   display: flex;
   flex-direction: column;
@@ -876,8 +965,8 @@ table.site-table tr:nth-child(even) td {
 .contact-detail-row i {
   width: 36px;
   height: 36px;
-  background-color: var(--white);
-  border: 1px solid #E2E8F0;
+  background-color: var(--brand-blue-subtle);
+  border: 1px solid #BFDBFE;
   color: var(--brand-blue);
   border-radius: 8px;
   display: flex;
@@ -896,17 +985,17 @@ table.site-table tr:nth-child(even) td {
 
 .contact-detail-row h5 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-size: 1.18rem;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
   margin-bottom: 2px;
 }
 
 .contact-detail-row p,
 .contact-detail-row a {
-  font-size: 0.84rem;
-  color: #5A6A80;
-  font-weight: 300;
+  font-size: 0.88rem;
+  color: var(--blue-body);
+  font-weight: 450;
 }
 
 .contact-detail-row a:hover {
@@ -921,7 +1010,7 @@ table.site-table tr:nth-child(even) td {
 .contact-action-box {
   margin-top: 15px;
   padding-top: 15px;
-  border-top: 1px solid #E2E8F0;
+  border-top: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -935,10 +1024,10 @@ table.site-table tr:nth-child(even) td {
 }
 
 .emergency-notice {
-  font-size: 0.78rem;
-  color: var(--text-light);
+  font-size: 0.8rem;
+  color: var(--blue-secondary);
   margin-top: 4px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .emergency-notice i {
@@ -947,25 +1036,25 @@ table.site-table tr:nth-child(even) td {
 }
 
 .contact-form-card {
-  background: var(--white);
+  background: #FFFFFF;
   border-radius: 12px;
   padding: 32px;
-  border: 1px solid #E2E8F0;
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
 }
 
 .contact-form-card h4 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: var(--primary-dark);
+  font-size: 1.65rem;
+  font-weight: 600; /* Reduced from 700 */
+  color: var(--blue-title);
   margin-bottom: 6px;
 }
 
 .contact-form-card p {
-  font-size: 0.84rem;
-  color: #718096;
-  font-weight: 300;
+  font-size: 0.88rem;
+  color: var(--blue-secondary);
+  font-weight: 400;
   margin-bottom: 20px;
 }
 
@@ -975,9 +1064,9 @@ table.site-table tr:nth-child(even) td {
 
 .form-group label {
   display: block;
-  font-size: 0.78rem;
-  font-weight: 500;
-  color: #4A5568;
+  font-size: 0.82rem;
+  font-weight: 500; /* Reduced from 600 */
+  color: var(--blue-heading);
   margin-bottom: 4px;
 }
 
@@ -986,11 +1075,11 @@ table.site-table tr:nth-child(even) td {
 .form-group select {
   width: 100%;
   padding: 10px 14px;
-  border: 1px solid #CBD5E1;
+  border: 1.5px solid #CBD5E1;
   border-radius: 6px;
   font-family: inherit;
-  font-size: 0.86rem;
-  color: var(--text-main);
+  font-size: 0.88rem;
+  color: var(--blue-title);
   background-color: #FAFBFD;
   outline: none;
   transition: all 0.2s ease;
@@ -1000,7 +1089,7 @@ table.site-table tr:nth-child(even) td {
 .form-group textarea:focus,
 .form-group select:focus {
   border-color: var(--brand-blue);
-  background-color: var(--white);
+  background-color: #FFFFFF;
   box-shadow: 0 0 0 2px var(--brand-blue-light);
 }
 
@@ -1017,13 +1106,13 @@ table.site-table tr:nth-child(even) td {
 
 /* ==========================================================
    FOOTER
-   ========================================================== */
+   ========================================================= */
 footer {
-  background-color: #111827;
-  color: #9CA3AF;
+  background-color: var(--blue-title);
+  color: #CBD5E1;
   padding: 44px 0 24px 0;
-  font-size: 0.82rem;
-  font-weight: 300;
+  font-size: 0.84rem;
+  font-weight: 400;
 }
 
 .footer-grid {
@@ -1035,14 +1124,14 @@ footer {
 
 .footer-col h5 {
   font-family: 'Cormorant Garamond', Georgia, serif;
-  color: var(--white);
-  font-size: 1.25rem;
-  font-weight: 500;
+  color: #FFFFFF;
+  font-size: 1.3rem;
+  font-weight: 600; /* Reduced from 700 */
   margin-bottom: 14px;
 }
 
 .footer-col p {
-  line-height: 1.6;
+  line-height: 1.62;
   margin-bottom: 12px;
 }
 
@@ -1055,31 +1144,52 @@ footer {
 }
 
 .footer-links a {
-  color: #9CA3AF;
+  color: #94A3B8;
+  font-weight: 450;
   transition: color 0.2s ease;
 }
 
 .footer-links a:hover {
-  color: #93C5FD;
+  color: #60A5FA;
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
 }
 
 /* ==========================================================
    RESPONSIVE DESIGN
    ========================================================== */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px 20px;
+    box-shadow: var(--shadow-md);
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .nav-links.show {
+    display: flex;
+  }
+  .mobile-menu-toggle {
+    display: block;
+  }
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 36px;
   }
   .hero-content {
     order: 1 !important;
@@ -1101,24 +1211,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 72px;
-    left: 0;
-    width: 100%;
-    background-color: var(--white);
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px;
-    box-shadow: var(--shadow-md);
-  }
-  .nav-links.show {
-    display: flex;
-  }
-  .mobile-menu-toggle {
-    display: block;
-  }
   .top-bar-left {
     display: none;
   }
@@ -1126,7 +1218,7 @@ footer {
     justify-content: center;
   }
   .hero-title {
-    font-size: 2.6rem;
+    font-size: 2.7rem;
   }
   .hero-desc {
     text-align: left;
