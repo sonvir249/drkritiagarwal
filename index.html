@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dr. Kriti Agarwal | Pulmonologist & Interventional Pulmonologist</title>
 
-    <!-- Google Fonts: Cormorant Garamond (Editorial Serif) + Plus Jakarta Sans (Clean Minimal Sans) -->
+    <!-- Google Fonts: Cormorant Garamond + Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -36,13 +36,18 @@
       </div>
     </div>
 
-    <!-- 2. Sticky Header & Navbar -->
+    <!-- 2. Sticky Header & Navbar with Lungs Brand Icon -->
     <header>
       <div class="container">
         <nav>
           <div class="logo-area">
-            <a href="#home" class="logo-title">Dr. Kriti Agarwal</a>
-            <span class="logo-subtitle">Chest Physician & Interventional Pulmonologist</span>
+            <a href="#home" class="logo-brand-wrap">
+              <span class="logo-icon"><i class="fa-solid fa-lungs"></i></span>
+              <div class="logo-text-col">
+                <span class="logo-title">Dr. Kriti Agarwal</span>
+                <span class="logo-subtitle">Chest Physician & Interventional Pulmonologist</span>
+              </div>
+            </a>
           </div>
 
           <ul class="nav-links" id="navLinks">
@@ -67,13 +72,17 @@
       </div>
     </header>
 
-    <!-- 3. Hero Banner -->
+    <!-- 3. Hero Banner with Online Image & Floating Lungs Badge -->
     <section class="hero" id="home">
+      <div class="hero-bg-lungs" aria-hidden="true">
+        <i class="fa-solid fa-lungs"></i>
+      </div>
+
       <div class="container">
         <div class="hero-grid">
           <div class="hero-content">
             <div class="badge-pill">
-              Consultant Interventional Pulmonologist
+              <i class="fa-solid fa-lungs"></i> Consultant Interventional Pulmonologist
             </div>
 
             <h1 class="hero-title">Dr. Kriti Agarwal</h1>
@@ -97,10 +106,18 @@
           </div>
 
           <div class="hero-image-wrapper">
+            <div class="floating-pulmo-badge">
+              <span class="pulse-dot"></span>
+              <i class="fa-solid fa-lungs"></i> Interventional Pulmonology</div>
+
             <div class="hero-image-card">
-              <div class="doctor-photo-placeholder">
-                <i class="fa-solid fa-user-doctor"></i>
-                <span>Professional Portrait</span>
+              <div class="doctor-photo-frame">
+                <img
+                  src="./images/dr-kriti-agarwal.webp"
+                  alt="Dr. Kriti Agarwal, Consultant Interventional Pulmonologist"
+                  class="doctor-img"
+                  loading="eager"
+                />
               </div>
               <div class="hero-verified-card">
                 <i class="fa-solid fa-circle-check"></i> MMC Registered Chest Physician & Fellow
@@ -156,10 +173,10 @@
               She holds the prestigious <strong>European Diploma in Adult Respiratory Medicine (EDARM - HERMES)</strong> conferred by the European Respiratory Society and is a Diplomate of the National Board (DNB). Her sub-speciality focus centers on advanced diagnostic bronchoscopy, pleural diseases, allergy immunotherapy, and ICU respiratory failure.
             </p>
             <div class="about-highlights">
-              <div class="highlight-pill">Center of Excellence PMDT Trained</div>
-              <div class="highlight-pill">Advanced EBUS & Cryobiopsy</div>
-              <div class="highlight-pill">Polysomnography & Sleep Medicine</div>
-              <div class="highlight-pill">Severe Asthma & Biologics</div>
+              <div class="highlight-pill"><i class="fa-solid fa-lungs-virus"></i> Center of Excellence PMDT Trained</div>
+              <div class="highlight-pill"><i class="fa-solid fa-microscope"></i> Advanced EBUS & Cryobiopsy</div>
+              <div class="highlight-pill"><i class="fa-solid fa-moon"></i> Polysomnography & Sleep Medicine</div>
+              <div class="highlight-pill"><i class="fa-solid fa-dna"></i> Severe Asthma & Biologics</div>
             </div>
           </div>
 
@@ -167,15 +184,15 @@
             <h4>Clinical Practice Standards</h4>
             <ul class="clinical-pillars">
               <li>
-                <i class="fa-solid fa-check-double"></i>
+                <i class="fa-solid fa-lungs"></i>
                 <span><strong>Precise Early Diagnosis:</strong> Utilization of Linear/Radial EBUS, cryobiopsy, and high-resolution imaging for undiagnosed lung nodules and mediastinal masses.</span>
               </li>
               <li>
-                <i class="fa-solid fa-check-double"></i>
+                <i class="fa-solid fa-hand-holding-heart"></i>
                 <span><strong>Patient-Centric Counseling:</strong> Compassionate explanation of chronic disease trajectories including Asthma, COPD, ILD, and Tuberculosis to patients and families.</span>
               </li>
               <li>
-                <i class="fa-solid fa-check-double"></i>
+                <i class="fa-solid fa-mask-ventilator"></i>
                 <span><strong>Critical Care Readiness:</strong> Acute respiratory distress triage, non-invasive ventilation (NIV), high-flow oxygen, and bedside emergency airway access.</span>
               </li>
             </ul>
@@ -184,86 +201,103 @@
       </div>
     </section>
 
-    <!-- 5.5 Symptoms & When to Consult Section -->
+    <!-- 5.5 Symptoms & When to Consult Section (Option A: Watermark Background) -->
     <section class="symptoms-section" id="symptoms">
       <div class="container">
         <div class="section-header">
           <span class="section-subtitle-tag">Patient Guidance</span>
           <h2 class="section-main-title">When Should You Consult a Pulmonologist?</h2>
           <p class="section-desc">
-            Early detection and specialized airway evaluation significantly improve respiratory outcomes. Are you experiencing any of these common warning symptoms?
+            Early detection and specialized airway evaluation significantly improve respiratory outcomes.<br />
+            Are you experiencing any of these common warning symptoms?
           </p>
         </div>
 
+        <!-- Full-Width 3-Column Symptom Grid -->
         <div class="symptoms-grid">
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-head-side-cough"></i>
             <p>Persistent cough for more than 2–3 weeks?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-person-walking"></i>
             <p>Breathlessness while walking or climbing stairs?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-wind"></i>
             <p>Recurrent wheezing or chest tightness?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-virus-covid"></i>
             <p>Frequent chest infections or pneumonia?</p>
           </div>
 
           <div class="symptom-card symptom-card-alert">
-            <i class="fa-solid fa-circle-exclamation"></i>
+            <i class="fa-solid fa-droplet"></i>
             <p>Blood in sputum (Hemoptysis)?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-bed"></i>
             <p>Cough that worsens at night or early morning?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-allergies"></i>
             <p>Recurrent allergies affecting your breathing?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-inhaler"></i>
             <p>Poor asthma control despite regular inhaler use?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-lungs-virus"></i>
             <p>Persistent breathlessness after previous TB treatment?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-volume-high"></i>
             <p>Loud snoring, daytime fatigue, or disturbed sleep?</p>
           </div>
 
           <div class="symptom-card symptom-card-alert">
-            <i class="fa-solid fa-circle-exclamation"></i>
+            <i class="fa-solid fa-heart-pulse"></i>
             <p>Unexplained low oxygen levels (SpO2 drops)?</p>
           </div>
 
           <div class="symptom-card">
-            <i class="fa-solid fa-triangle-exclamation"></i>
+            <i class="fa-solid fa-smoking"></i>
             <p>Smoking history with persistent cough or breathlessness?</p>
           </div>
         </div>
 
+        <!-- Clean Integrated Action Callout -->
         <div class="symptoms-action-prompt">
-          <p>
-            If you or a family member have one or more of these symptoms, schedule a specialized diagnostic evaluation.
-          </p>
-          <a href="#contact" class="btn-primary">
-            <i class="fa-solid fa-calendar-check"></i> Book an OPD Evaluation
-          </a>
+          <div class="action-prompt-text">
+            <span class="prompt-badge">Next Clinical Step</span>
+            <h3>Do Not Ignore Persistent Chest Symptoms</h3>
+            <p>
+              Early diagnostic workups (spirometry, DLCO, bronchoscopy) protect lung volume and prevent irreversible respiratory decline.
+            </p>
+          </div>
+          <div class="prompt-actions">
+            <a href="#contact" class="btn-primary">
+              <i class="fa-solid fa-calendar-check"></i> Book an OPD Evaluation
+            </a>
+            <a
+              href="https://wa.me/919967303499?text=Hello%20Dr.%20Kriti%2C%20I%20have%20inquiries%20regarding%20my%20respiratory%20symptoms."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-outline-whatsapp"
+            >
+              <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -302,7 +336,7 @@
 
           <div class="service-card">
             <div class="service-icon-box">
-              <i class="fa-solid fa-bed-pulse"></i>
+              <i class="fa-solid fa-mask-ventilator"></i>
             </div>
             <h4>Critical Care & Access</h4>
             <p>
@@ -336,7 +370,7 @@
 
         <div class="timeline">
           <div class="timeline-item">
-            <div class="timeline-dot"></div>
+            <div class="timeline-dot"><i class="fa-solid fa-lungs"></i></div>
             <div class="timeline-card">
               <div class="timeline-header">
                 <span class="timeline-role">Fellow in Interventional Pulmonology</span>
@@ -354,7 +388,7 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-dot"></div>
+            <div class="timeline-dot"><i class="fa-solid fa-hospital-user"></i></div>
             <div class="timeline-card">
               <div class="timeline-header">
                 <span class="timeline-role">Assistant Professor (Pulmonary Medicine)</span>
@@ -372,7 +406,7 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-dot"></div>
+            <div class="timeline-dot"><i class="fa-solid fa-user-doctor"></i></div>
             <div class="timeline-card">
               <div class="timeline-header">
                 <span class="timeline-role">Senior Resident (Pulmonary Medicine)</span>
@@ -389,7 +423,7 @@
           </div>
 
           <div class="timeline-item">
-            <div class="timeline-dot"></div>
+            <div class="timeline-dot"><i class="fa-solid fa-stethoscope"></i></div>
             <div class="timeline-card">
               <div class="timeline-header">
                 <span class="timeline-role">Junior Resident (Pulmonary Medicine)</span>
