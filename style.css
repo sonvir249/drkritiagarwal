@@ -172,7 +172,7 @@ nav {
 .nav-links {
   display: flex;
   list-style: none;
-  gap: clamp(10px, 1.3vw, 20px);
+  gap: clamp(8px, 1.15vw, 18px);
   align-items: center;
   flex-shrink: 1;
 }
@@ -182,7 +182,7 @@ nav {
 }
 
 .nav-links li a {
-  font-size: clamp(0.8rem, 0.95vw, 0.88rem);
+  font-size: clamp(0.78rem, 0.92vw, 0.86rem);
   font-weight: 500;
   color: var(--blue-secondary);
   padding: 6px 0;
@@ -214,9 +214,9 @@ nav {
 .btn-nav {
   background-color: var(--blue-heading);
   color: #FFFFFF !important;
-  padding: 8px clamp(12px, 1.3vw, 18px) !important;
+  padding: 8px clamp(10px, 1.2vw, 16px) !important;
   border-radius: 20px;
-  font-size: clamp(0.76rem, 0.88vw, 0.84rem) !important;
+  font-size: clamp(0.74rem, 0.85vw, 0.82rem) !important;
   font-weight: 500 !important;
   letter-spacing: 0.02em;
   transition: all 0.2s ease !important;
@@ -281,28 +281,6 @@ nav {
   text-align: center;
 }
 
-.floating-pulmo-badge {
-  position: absolute;
-  top: -12px;
-  left: 6px;
-  z-index: 10;
-  background: #111827;
-  color: #FFFFFF;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.76rem;
-  font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.floating-pulmo-badge i {
-  color: #60A5FA;
-}
-
 .pulse-dot {
   width: 7px;
   height: 7px;
@@ -359,6 +337,11 @@ nav {
   font-weight: 400;
   margin-bottom: 30px;
   max-width: 580px;
+}
+
+.hero-desc strong {
+  font-weight: 600;
+  color: var(--blue-title);
 }
 
 .hero-cta {
@@ -445,7 +428,9 @@ nav {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  text-align: center;
   font-weight: 500;
   color: var(--blue-heading);
 }
@@ -620,7 +605,7 @@ section {
 }
 
 /* ==========================================================
-   SYMPTOMS SECTION - OPTION A (Light Theme Watermark Background)
+   SYMPTOMS SECTION - OPTION A (Light Watermark Background)
    ========================================================== */
 .symptoms-section {
   position: relative;
@@ -637,7 +622,6 @@ section {
   background-attachment: scroll;
 }
 
-/* 3-Column Symptom Cards Grid */
 .symptoms-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -688,7 +672,6 @@ section {
   color: #DC2626;
 }
 
-/* Centred Integrated Action Callout */
 .symptoms-action-prompt {
   display: flex;
   justify-content: space-between;
@@ -745,11 +728,11 @@ section {
 .btn-outline-whatsapp {
   background-color: #FFFFFF;
   color: #16A34A;
-  border: 1.5px solid #00ec53;
+  border: 1.5px solid #BBF7D0;
   padding: 9px 18px;
   border-radius: 24px;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 500;
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -805,7 +788,7 @@ section {
   margin-bottom: 16px;
 }
 
-.service-card h4 {
+.service-card h3 {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.35rem;
   font-weight: 600;
@@ -818,6 +801,101 @@ section {
   color: var(--blue-body);
   font-weight: 400;
   line-height: 1.62;
+}
+
+.service-card p strong {
+  color: var(--blue-title);
+  font-weight: 600;
+}
+
+/* ==========================================================
+   LOCATIONS SECTION (LOCAL SEO HUBS)
+   ========================================================== */
+.locations-section {
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.location-card {
+  background: #FAFBFD;
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease;
+}
+
+.location-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--brand-blue);
+  box-shadow: var(--shadow-sm);
+  background: #FFFFFF;
+}
+
+.location-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--brand-blue);
+  background: var(--brand-blue-subtle);
+  border: 1px solid #BFDBFE;
+  padding: 3px 10px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.location-card h4 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--blue-title);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.location-card h4 i {
+  color: var(--brand-blue);
+  font-size: 1.1rem;
+}
+
+.location-address {
+  font-size: 0.88rem;
+  color: var(--blue-body);
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.location-notes {
+  font-size: 0.82rem;
+  color: var(--blue-secondary);
+  line-height: 1.5;
+  margin-bottom: 16px;
+  flex-grow: 1;
+}
+
+.location-link {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--brand-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.location-link:hover {
+  text-decoration: underline;
 }
 
 /* ==========================================================
@@ -1077,6 +1155,43 @@ table.site-table tr:nth-child(even) td {
 }
 
 /* ==========================================================
+   FAQ SECTION (RICH SNIPPETS)
+   ========================================================== */
+.faq-section {
+  background-color: #FAFBFD;
+  border-top: 1px solid var(--border-color);
+}
+
+.faq-accordion {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 18px 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.faq-question {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--blue-title);
+  margin-bottom: 8px;
+}
+
+.faq-answer p {
+  font-size: 0.88rem;
+  color: var(--blue-body);
+  line-height: 1.6;
+}
+
+/* ==========================================================
    CONTACT
    ========================================================== */
 .contact-section {
@@ -1282,6 +1397,10 @@ footer {
   margin-bottom: 12px;
 }
 
+.footer-col p strong {
+  color: #FFFFFF;
+}
+
 .footer-links {
   list-style: none;
 }
@@ -1344,12 +1463,12 @@ footer {
   .hero-image-wrapper {
     order: 2 !important;
   }
-  .floating-pulmo-badge {
-    left: calc(50% - 150px);
-  }
   .about-grid,
   .edu-grid,
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .locations-grid {
     grid-template-columns: 1fr;
   }
   .symptoms-grid {
